@@ -3,15 +3,15 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
-class RegisterController extends Controller
+class RegisterController extends HomeController
 {
     /*
     |--------------------------------------------------------------------------
-    | Register Controller
+    | Register HomeController
     |--------------------------------------------------------------------------
     |
     | This controller handles the registration of new users as well as their
