@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace todoapp\Http\Controllers\Auth;
 
-use App\Http\Controllers\HomeController;
+use todoapp\Http\Controllers\HomeController;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class ResetPasswordController extends HomeController

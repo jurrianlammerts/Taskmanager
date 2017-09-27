@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace todoapp\Http\Controllers\Auth;
 
-use App\User;
-use App\Http\Controllers\HomeController;
+use todoapp\User;
+use todoapp\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -58,7 +58,7 @@ class RegisterController extends HomeController
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return \todoapp\User
      */
     protected function create(array $data)
     {

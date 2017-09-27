@@ -9,13 +9,13 @@ keys:
     - ~/.ssh/id_rsa
 
 folders:
-    - map: ~/Code/taskManager
+    - map: ~/code/taskmanager
       to: /home/vagrant/Code
 
 sites:
-    - map: laravel.app
-      to: /home/vagrant/Code//public
+    - map: laravel.dev
+      to: /home/vagrant/Code/Laravel/public
 
 databases:
-    - laraveltest
+    - todo
 
