@@ -30,15 +30,12 @@ class AuthController extends BaseController
             'name' => Input::get('username'),
             'password' => Input::get('password')
         ), false);
-
         if(!$auth) {
             return Redirect::route('login')->withErrors(array(
                 'Invalid credentials were provided.'
             ));
         }
-
         return Redirect::route('home');
-
 
     }
 }

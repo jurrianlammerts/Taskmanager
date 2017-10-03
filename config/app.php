@@ -174,7 +174,7 @@ return [
          */
         todoapp\Providers\AppServiceProvider::class,
         todoapp\Providers\AuthServiceProvider::class,
-        // todoapp\Providers\BroadcastServiceProvider::class,
+        todoapp\Providers\BroadcastServiceProvider::class,
         todoapp\Providers\EventServiceProvider::class,
         todoapp\Providers\RouteServiceProvider::class,
 
@@ -226,6 +226,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Form' => Illuminate\Html\FormFacade::class,
 
     ],
 
