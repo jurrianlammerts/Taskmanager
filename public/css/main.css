@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    /*FLEX STUFF*/
+    display: flex;
+    font-family: Space Mono, sans-serif;
+}
+
+h2 {
+    color: #333;
+
+}
+
+.side-nav {
+    height: 100vh;
+    width: 20%;
+    margin: 0;
+    background-color: #333;
+    color: #27ae60;
+    border-right: 1px solid #27ae60;
+}
+.todo-container {
+    margin: 10% 10%;
+    -webkit-box-shadow: 8px 8px 35px -4px rgba(0,0,0,1);
+    -moz-box-shadow: 8px 8px 35px -4px rgba(0,0,0,1);
+    box-shadow: 8px 8px 35px -4px rgba(0,0,0,1);
+    border-radius: 15px;
+}
+
+
+.side-nav a {
+    text-decoration: none;
+    color: #27ae60;
+}
+
+.side-nav ul {
+    height: 50%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    /*FLEX STUFF*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.side-nav ul :hover {
+    align-self: center;
+    width: 100%;
+    padding: 15px;
+    background-color: #19703e;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    transition: .1s ease-in-out;
+}
+
+.side-nav img {
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.side-nav img:hover {
+    cursor: pointer;
+    transform: rotate(360deg);
+    transition: .5s ease-in-out;
+    height: 125px;
+    width: 125px;
+}
+
+.list {
+    height: 100%;
+    width: 22%;
+    box-shadow: 5px 5px 5px 0 rgba(46, 74, 117, 0.5);
+}
+
+a {
+    color: #27ae60;
+    text-decoration: none;
+}
+
+.hamburger-nav {
+    display: none;
+}
+
+section {
+    height: 33%;
+    width: 95%;
+}
+
+/*MEDIA RULES*/
+
+@media screen and (max-width: 800px) {
+    nav {
+        display: none;
+    }
+    main {
+        height: 2000px;
+        width: 100%;
+    }
+
+    .hamburger-nav {
+        display: flex;
+        align-self: flex-end;
+        margin: 0 5% 0 0;
+        height: 50px;
+        width: 50px;
+        background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-503/Hamburger%204buttng);
+        cursor: pointer;
+    }
+
+    .hamburger-nav ul {
+        display: none;
+    }
+
+    .hamburger-nav-items.open {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        margin: 0;
+        background-color: #333;
+        opacity: .8;
+        color: #fff;
+        font-size: 24px;
+        list-style-type: none;
+        text-decoration: underline;
+        z-index: 9999;
+        /*FLEX STUFF*/
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hamburger-nav ul li {
+        margin-top: 65px;
+        padding: 10px;
+    }
+
+    .hamburger-nav ul li:hover {
+        background-color: #19703e;
+    }
+}

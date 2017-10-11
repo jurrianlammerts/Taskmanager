@@ -10,12 +10,18 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
 use View;
 
-
 class AuthController extends BaseController
 {
 
     public function getLogin(){
-        return View::make('login');
+        if($user = Auth::user())
+        {
+            return redirect('/');
+        }
+        else{
+            return View::make('login');
+        }
+
     }
 
     public function postLogin(){
@@ -35,7 +41,15 @@ class AuthController extends BaseController
                 'Invalid credentials were provided.'
             ));
         }
-        return Redirect::route('home');
+        return redirect ('/');
 
+    }
+
+    public function getLogout(Request $request) {
+
+        Auth::logout();
+
+        return redirect('/')
+            ->with('message', 'You have been logged out');
     }
 }

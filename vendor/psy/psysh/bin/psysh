@@ -132,4 +132,5 @@ if (!function_exists('Psy\bin')) {
 }
 
 // And go!
+/** @noinspection PhpParamsInspection */
 call_user_func(Psy\bin());

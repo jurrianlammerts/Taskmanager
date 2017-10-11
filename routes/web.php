@@ -1,32 +1,64 @@
 <?php
 
+Route::bind('task', function ($value, $route) {
+    return todoapp\Item::where('id', $value)->first();
+});
+
 Route::get('/', array(
     'as' => 'home',
-    'uses' => 'HomeController@getIndex'
+    'uses' => 'ItemController@getIndex'
+));
+
+Route::get('/list', array(
+    'as' => 'todo',
+    'uses' => 'ItemController@getIndex'
 ))->middleware('auth');
 
-Route::post('/', array(
-    'uses' => 'HomeController@postIndex'
+Route::post('/list', array(
+    'as' => 'todo',
+    'uses' => 'ItemController@postIndex'
 ))->middleware('web');
-
 
 Route::get('/new', array(
     'as' => 'new',
-    'uses' => 'HomeController@getNew'
+    'uses' => 'ItemController@getNew'
 ));
-
 Route::post('/new', array(
-    'uses' => 'HomeController@postNew'
+    'uses' => 'ItemController@postNew'
 ))->middleware('web');
+
+
+
+Route::get('/delete/{task}', array(
+    'as' => 'delete',
+    'uses' => 'ItemController@getDelete'
+));
 
 
 Route::get('/login', array(
     'as' => 'login',
     'uses' => 'AuthController@getLogin'
-))->middleware('guest');
+));
 
 Route::post('login', array(
     'uses' => 'AuthController@postLogin'
 ))->middleware('web');
+
+Route::get('/logout', array(
+    'as' => 'logout',
+    'uses' =>'AuthController@getLogout'
+));
+
+Route::get('/register', array(
+    'as' => 'register',
+    'uses' =>'Auth\RegisterController@validator'
+))->middleware('web');
+
+
+//Route::get('/register', function()
+//{
+//    return View::make('auth.register');
+//});
+
 
 

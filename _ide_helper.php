@@ -7434,6 +7434,7 @@ namespace Illuminate\Support\Facades {
         public static function setSession($session)
         {
             //Method inherited from \Symfony\Component\HttpFoundation\Request            
+            /** @noinspection PhpParamsInspection */
             return \Illuminate\Http\Request::setSession($session);
         }
         
@@ -14499,7 +14500,8 @@ namespace  {
              * @static 
              */ 
             public static function addNestedWhereQuery($query, $boolean = 'and')
-            {    
+            {
+                /** @noinspection PhpParamsInspection */
                 return \Illuminate\Database\Query\Builder::addNestedWhereQuery($query, $boolean);
             }
          
