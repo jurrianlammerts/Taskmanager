@@ -8,23 +8,12 @@
 require('./bootstrap');
 
 
-$('#fullname').click(function(){
-    var name = $(this).text();
-    $(this).html('');
-    $('<input></input>')
-        .attr({
-            'type': 'text',
-            'name': 'fname',
-            'id': 'txt_fullname',
-            'size': '30',
-            'value': name
-        })
-        .appendTo('#fullname');
-    $('#txt_fullname').focus();
-});
+$('.button-collapse').sideNav({
+        menuWidth: 300, // Default is 300
+        edge: 'left', // Choose the horizontal origin
+        closeOnClick: false, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+        draggable: true // Choose whether you can drag to open on touch screens,
+    }
+);
 
-$(document).on('blur','#txt_fullname', function(){
-    var name = $(this).val();
-    //alert('Make an AJAX call and pass this parameter >> name=' + name);
-    $('#fullname').text(name);
-});
+

@@ -34,7 +34,7 @@ class ItemController extends BaseController
         if ($item->owner_id == Auth::user()->id) {
             $item->mark();
         }
-        return Redirect('/list');
+        return Redirect('/');
     }
 
     public function getNew()

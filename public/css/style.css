@@ -2363,6 +2363,14 @@ select[multiple].form-group-lg .form-control {
     color: #fff;
 }
 
+.error {
+    color: #D8000C;
+    background-color: #FFD2D2;
+
+}
+
+
+
 .has-error .help-block,
 .has-error .control-label,
 .has-error .radio,
@@ -4734,10 +4742,10 @@ a.thumbnail.active {
 }
 
 .alert {
-    padding: 15px;
+    padding: 10px;
     margin-bottom: 20px;
     border: 1px solid transparent;
-    border-radius: 0px;
+    border-radius: 5px;
 }
 
 .alert h4 {

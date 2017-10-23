@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="{{ URL::asset('public/css/style.css') }}" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
+
+
 </head>
 
 <body>
@@ -23,7 +25,8 @@
         <div class="row">
             <div class="col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4">
                 <img src="http://www.bighedz.com/370-thickbox_default/donald-trump-life-size-celebrity-face-mask.jpg" class="user-avatar">
-                <h2>You want to improve yourself? Start now!</h2>
+
+                <div id="quote"></div>
 
                 {!! Form::open(array('autocomplete' => 'off')) !!}
 
@@ -36,7 +39,7 @@
                 <form role="form">
                     <div class="form-content">
                         <div class="form-group">
-                            <input type="text" name="username" placeholder="Name" class="form-control input-underline input-lg">
+                            <input type="text" name="username" placeholder="Username" class="form-control input-underline input-lg">
                         </div>
                         <div class="form-group">
                             <input type="password" name="password" placeholder="Password" class="form-control input-underline input-lg">
@@ -44,7 +47,7 @@
                     </div>
                     <input type="submit" class="btn btn-white btn-outline btn-lg btn-rounded progress-login" value="Log in">
 
-                    <a href="/signup" class="btn btn-white btn-outline btn-lg btn-rounded">Register</a>
+                    <a href="{{ route('signup') }}" class="btn btn-white btn-outline btn-lg btn-rounded">Register</a>
                 </form>
 
                 {!! Form::close() !!}
@@ -52,6 +55,8 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript" src="{{asset('resources/assets/js/quote.js')}}"></script>
 
 </body>
 

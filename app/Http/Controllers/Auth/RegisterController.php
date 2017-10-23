@@ -2,12 +2,13 @@
 
 namespace todoapp\Http\Controllers\Auth;
 
+
 use todoapp\User;
-use todoapp\Http\Controllers\HomeController;
+use todoapp\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
-class RegisterController extends HomeController
+class RegisterController extends AuthController
 {
     /*
     |--------------------------------------------------------------------------
@@ -62,10 +63,12 @@ class RegisterController extends HomeController
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+        User::create([
+            'name'     => $user->name,
+            'email'    => $user->email,
+            'provider' => $provider,
+            'provider_id' => $user->id
         ]);
+        return view('your_view');
     }
 }

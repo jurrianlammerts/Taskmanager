@@ -5,6 +5,7 @@ namespace todoapp;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 
+
 class User extends Authenticatable
 {
     /**
@@ -13,7 +14,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'password', 'email',
+        'username', 'password', 'email', 'first_name', 'last_name'
     ];
 
     public $timestamps = false;
@@ -41,4 +42,5 @@ class User extends Authenticatable
     public function items () {
         return $this->hasMany(Item::class, 'owner_id');
     }
+
 }

@@ -23,11 +23,9 @@ Route::get('/new', array(
     'as' => 'new',
     'uses' => 'ItemController@getNew'
 ));
-Route::post('/new', array(
+Route::post('new', array(
     'uses' => 'ItemController@postNew'
 ))->middleware('web');
-
-
 
 Route::get('/delete/{task}', array(
     'as' => 'delete',
@@ -49,16 +47,12 @@ Route::get('/logout', array(
     'uses' =>'AuthController@getLogout'
 ));
 
-Route::get('/register', array(
-    'as' => 'register',
-    'uses' =>'Auth\RegisterController@validator'
-))->middleware('web');
 
+Route::get('/signup', [
+    'as' => 'signup',
+    'uses' => 'UserController@postIndex'
+]);
 
-//Route::get('/register', function()
-//{
-//    return View::make('auth.register');
-//});
-
-
-
+Route::post('signup', array(
+    'uses' => 'UserController@postSignUp'
+));

@@ -33,7 +33,7 @@ class AuthController extends BaseController
         }
 
         $auth = Auth::attempt(array(
-            'name' => Input::get('username'),
+            'username' => Input::get('username'),
             'password' => Input::get('password')
         ), false);
         if(!$auth) {

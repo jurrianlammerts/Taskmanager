@@ -24,7 +24,6 @@
     <ul>
         <li><img src="http://www.bighedz.com/370-thickbox_default/donald-trump-life-size-celebrity-face-mask.jpg"></li>
         <li><a href="{{ route('home') }}"><i class="fa fa-line-chart"></i> Dashboard</a></li>
-        <li><a href="{{ route('todo') }}"><i class="fa fa-check-square-o"></i> Todos</a></li>
         <li><i class="fa fa-cog"></i> Settings</li>
         <li><a href="{{ route('logout') }}"><i class="fa fa-sign-out" ></i>Log out</a></li>
     </ul>
