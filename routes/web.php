@@ -1,9 +1,5 @@
 <?php
 
-Route::bind('task', function ($value, $route) {
-    return todoapp\Item::where('id', $value)->first();
-});
-
 Route::get('/', array(
     'as' => 'home',
     'uses' => 'ItemController@getIndex'
@@ -23,15 +19,15 @@ Route::get('/new', array(
     'as' => 'new',
     'uses' => 'ItemController@getNew'
 ));
+
 Route::post('new', array(
     'uses' => 'ItemController@postNew'
 ))->middleware('web');
 
-Route::get('/delete/{task}', array(
+Route::get('/delete/{item}', array(
     'as' => 'delete',
     'uses' => 'ItemController@getDelete'
 ));
-
 
 Route::get('/login', array(
     'as' => 'login',
@@ -47,12 +43,29 @@ Route::get('/logout', array(
     'uses' =>'AuthController@getLogout'
 ));
 
-
-Route::get('/signup', [
-    'as' => 'signup',
-    'uses' => 'UserController@postIndex'
+Route::get('/admin', [
+    'as' => 'admin',
+    'uses' => 'UserController@getIndex',
+    'middleware' => 'admin',
 ]);
 
-Route::post('signup', array(
+Route::post('admin', array(
+    'uses' => 'UserController@update',
+));
+
+//Route::post('/users/{id}/destroy', array(
+//    'as' => 'users',
+//    'uses' => 'UserController@destroy'
+//));
+
+
+Route::get('/signup', function () {
+    return view('signup');
+});
+
+Route::post('/signup', array(
+    'as' => 'signup',
     'uses' => 'UserController@postSignUp'
 ));
+
+Route::resource('users', 'UserController');

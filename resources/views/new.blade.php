@@ -11,7 +11,7 @@
                 <div class="panel-body text-center">
                     {{ Form::open([
                                         'url' => '/',
-                                        'method' => 'POST'
+                                        'method' => 'post'
                                     ]) }}
                     <div class="form-inline">
                         @foreach($errors->all() as $error)

@@ -4,7 +4,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-4">
                 <div class="todo-container">
                     <div class="panel-heading">
                         <div class="fullname todo-header text-center">
@@ -40,11 +40,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                 <div class="todo-container">
                     <div class="panel-heading">
                         <div class="fullname todo-header text-center">
@@ -80,6 +76,16 @@
                                 </div>
                             </ul>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="todo-container">
+                    <div class="panel-heading">
+                        <div class="fullname todo-header text-center">
+                            <h2><i class="fa fa-"></i>  New List</h2>
+                        </div>
+
                     </div>
                 </div>
             </div>

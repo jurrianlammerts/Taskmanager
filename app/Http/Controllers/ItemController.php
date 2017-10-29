@@ -18,7 +18,6 @@ class ItemController extends BaseController
         if ($user = Auth::user()) {
             $items = Auth::user()->items;
 
-
             return View::make('home', array('items' => $items));
         } else {
             return Redirect('/login');
@@ -49,15 +48,16 @@ class ItemController extends BaseController
 
         if ($validator->fails()) {
             return Redirect('new')->withErrors($validator);
+        } else {
+
+            $item = new Item;
+            $item->done = false;
+            $item->name = Input::get('name');
+            $item->owner_id = Auth::user()->id;
+            $item->save();
+
+            return Redirect('/');
         }
-
-        $item = new Item;
-        $item->done = false;
-        $item->name = Input::get('name');
-        $item->owner_id = Auth::user()->id;
-        $item->save();
-
-        return Redirect('/');
     }
 
     public function getDelete(item $item)

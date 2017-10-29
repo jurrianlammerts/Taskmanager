@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{ URL::asset('public/css/style.css') }}" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
 </head>
@@ -29,9 +30,10 @@
 
             @foreach($errors->all() as $error)
                 <div class="alert alert-danger alert-dismissable" role="alert">
-                    <span type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></span>
+                    <span class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">x</span></span>
                     <p>{{ $error }}</p>
                 </div>
+
             @endforeach
 
                 {{ csrf_field() }}

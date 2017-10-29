@@ -27,6 +27,7 @@ class User extends Authenticatable
         'password', 'remember_token', 'created_at', 'updated_at',
     ];
 
+
     /**
      * Overrides the method to ignore the remember token.
      */
