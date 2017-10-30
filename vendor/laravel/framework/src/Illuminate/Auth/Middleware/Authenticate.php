@@ -4,7 +4,9 @@ namespace Illuminate\Auth\Middleware;
 
 use Closure;
 use Illuminate\Auth\AuthenticationException;
-use Illuminate\Contracts\Auth\Factory as Auth;
+// use Illuminate\Contracts\Auth\Factory as Auth;
+use Illuminate\Support\Facades\Auth;
+
 
 class Authenticate
 {
@@ -38,9 +40,11 @@ class Authenticate
      */
     public function handle($request, Closure $next, ...$guards)
     {
-        $this->authenticate($guards);
+        if(Auth::user()) {
+            return $next($request);
+        }
 
-        return $next($request);
+        return redirect('login');
     }
 
     /**

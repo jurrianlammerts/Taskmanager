@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
 
-    public function getIndex()
+    public function index()
     {
         if ($user = Auth::user()) {
             // get all the users

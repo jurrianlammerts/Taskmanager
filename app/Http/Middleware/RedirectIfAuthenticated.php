@@ -17,10 +17,13 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard($guard)->check()) {
+        // Kijken of is ingelogd
+        if (Auth::user()) {
+            // Zo ja, redirect naar home
             return redirect('/home');
         }
 
+        // Zo nee, ga door naar volgende middleware of route
         return $next($request);
     }
 }

@@ -15,13 +15,9 @@ class ItemController extends BaseController
 
     public function getIndex()
     {
-        if ($user = Auth::user()) {
-            $items = Auth::user()->items;
+        $items = Auth::user()->items;
 
-            return View::make('home', array('items' => $items));
-        } else {
-            return Redirect('/login');
-        }
+        return View::make('home', array('items' => $items));
     }
 
     public function postIndex()
@@ -43,13 +39,12 @@ class ItemController extends BaseController
 
     public function postNew()
     {
-        $rules = array('name' => 'required|min:3|max:255');
+        $rules = ['name' => 'required|min:3|max:255'];
         $validator = Validator::make(Input::all(), $rules);
-
+        
         if ($validator->fails()) {
             return Redirect('new')->withErrors($validator);
         } else {
-
             $item = new Item;
             $item->done = false;
             $item->name = Input::get('name');

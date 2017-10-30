@@ -10,7 +10,7 @@
                 </div>
                 <div class="panel-body text-center">
                     {{ Form::open([
-                                        'url' => '/',
+                                        'url' => '/new',
                                         'method' => 'post'
                                     ]) }}
                     <div class="form-inline">
