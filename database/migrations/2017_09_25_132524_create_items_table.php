@@ -15,13 +15,23 @@ class CreateItemsTable extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('owner_id');
             $table->string('name');
             $table->boolean('done');
+            $table->integer('user_id')->unsigned();
+            
+            $table->integer('list_id')->unsigned();
+            
             $table->timestamps();
+        });
+
+
+        Schema::table('items', function($table) {
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('list_id')->references('id')->on('lists')->onDelete('cascade');
         });
     }
 
+    
     /**
      * Reverse the migrations.
      *

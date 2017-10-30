@@ -19,7 +19,7 @@
                                         <label class="checkbox">
                                             {{ Form::open([
                                                 'id' => "todo-form--{$item->id}",
-                                                'url' => '/list',
+                                                'url' => '/tick',
                                                 'method' => 'POST'
                                             ]) }}
                                                 <input type="hidden" name="id" value="{{ $item->id }}">

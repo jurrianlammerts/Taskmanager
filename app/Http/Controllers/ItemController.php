@@ -15,7 +15,7 @@ class ItemController extends BaseController
 
     public function getIndex()
     {
-        $items = Auth::user()->items;
+        $items = Auth::user()->items();
 
         return View::make('home', array('items' => $items));
     }
@@ -48,7 +48,7 @@ class ItemController extends BaseController
             $item = new Item;
             $item->done = false;
             $item->name = Input::get('name');
-            $item->owner_id = Auth::user()->id;
+            $item->user_id = Auth::user()->id;
             $item->save();
 
             return Redirect('/');
@@ -57,7 +57,7 @@ class ItemController extends BaseController
 
     public function getDelete(item $item)
     {
-        if ($item->owner_id == Auth::user()->id) {
+        if ($item->user_id == Auth::user()->id) {
             $item->delete();
         }
 

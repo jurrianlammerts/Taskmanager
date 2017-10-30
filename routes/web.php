@@ -8,12 +8,7 @@ Route::group(['middleware' => ['web']], function() {
             'uses' => 'ItemController@getIndex'
         ));
 
-        Route::get('/list', array(
-            'as' => 'todo',
-            'uses' => 'ItemController@getIndex'
-        ));
-
-        Route::post('/list', array(
+        Route::post('/tick', array(
             'as' => 'todo',
             'uses' => 'ItemController@postIndex'
         ));
@@ -40,6 +35,7 @@ Route::group(['middleware' => ['web']], function() {
         Route::resource('/users', 'UserController');
         Route::get('users', 'UserController@index');
 
+        Route::resource('/lists', 'ListController');
 
     //Route::post('/users/{id}/destroy', array(
     //    'as' => 'users',

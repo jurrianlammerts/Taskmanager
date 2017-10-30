@@ -9,18 +9,20 @@ class ItemsTableSeeder extends Seeder {
 
         $items = array(
             array(
-                'owner_id' => 3,
+                'user_id' => 1,
+                'list_id' => 1,
                 'name' => 'Do your homework',
                 'done' => false
             ),
-
             array(
-                'owner_id' => 3,
+                'user_id' => 1,
+                'list_id' => 1,
                 'name' => 'Walk the dogs',
                 'done' => true
             ),
             array(
-                'owner_id' => 3,
+                'user_id' => 1,
+                'list_id' => 1,
                 'name' => 'Cook dinner',
                 'done' => false
             ),
